@@ -1,7 +1,7 @@
 kube-shell
 ==============
 
-|Build Status| |PyPI version| |PyPI pyversions| |License| |Gitter chat|
+|Build Status| |License|
 
 Kube-shell: An integrated shell for working with the Kubernetes CLI
 
@@ -108,13 +108,7 @@ Shell <https://github.com/awslabs/aws-shell>`__,
 `prompt
 toolkit <https://github.com/jonathanslenders/python-prompt-toolkit>`__
 
-.. |Build Status| image:: https://travis-ci.org/cloudnativelabs/kube-shell.svg?branch=master
-   :target: https://travis-ci.org/cloudnativelabs/kube-shell
-.. |PyPI version| image:: https://badge.fury.io/py/kube-shell.svg
-   :target: https://badge.fury.io/py/kube-shell
-.. |PyPI pyversions| image:: https://img.shields.io/pypi/pyversions/ansicolortags.svg
-   :target: https://pypi.python.org/pypi/kube-shell/
+.. |Build Status| image:: https://travis-ci.org/horvathtamasdev/kube-shell.svg?branch=master
+   :target: https://travis-ci.org/horvathtamasdev/kube-shell
 .. |License| image:: http://img.shields.io/:license-apache-blue.svg
    :target: http://www.apache.org/licenses/LICENSE-2.0.html
-.. |Gitter chat| image:: http://badges.gitter.im/kube-shell/Lobby.svg
-   :target: https://gitter.im/kube-shell/Lobby

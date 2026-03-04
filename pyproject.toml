@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "Kubernetes shell: An integrated shell for working with the Kubernetes CLI"
 readme = "README.rst"
 license = "Apache-2.0"
-authors = [{name = "Cloudnative Labs"}]
+authors = [{name = "DeToX Labs"}]
 keywords = ["kubernetes", "autocomplete", "shell"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -27,7 +27,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/cloudnativelabs/kube-shell"
+Homepage = "https://github.com/horvathtamasdev/kube-shell"
 
 [project.scripts]
 kube-shell = "kubeshell.main:cli"
