@@ -1,12 +1,12 @@
 kube-shell
 ==============
 
-|Build Status| |License|
+|License|
 
 Kube-shell: An integrated shell for working with the Kubernetes CLI
 
-Under the hood kube-shell still calls kubectl. Kube-shell aims to
-provide ease-of-use of kubectl and increasing productivity.
+Under the hood ``kube-shell`` still calls ``kubectl``. Kube-shell aims to
+provide ease-of-use of ``kubectl`` and increasing productivity.
 
 kube-shell features
 -------------------
@@ -28,7 +28,7 @@ Command History
 
 You can use up-arrow and down-arrow to walk through the history of
 commands executed. Also up-arrow partial string matching is possible.
-For e.g. enter `kubectl get` and use up-arrow and down-arrow to browse
+For e.g. enter ``kubectl get`` and use up-arrow and down-arrow to browse
 through all commands. You could also use CTRL+r to search
 from the history of commands.
 
@@ -66,29 +66,26 @@ across the words.
 Installation
 ------------
 
-Remove all older versions installed with `pip`, and run `pip install -e .` from the folder of this repo.
+Remove all older versions installed with ``pip``, and run ``pip install -e .`` from the folder of this repo.
 
 Usage
 -----
 
-Just run `kube-shell` to bring up shell.
-
-At the `kube-shell` command prompt you can run exit or press `F10` to exit
-the shell. You can clear the screen by running clear command.
+Just run `kube-shell` to bring up shell. Once running you can run ``exit`` or press ``F10`` to close the shell.
+You can clear the screen by running ``clear`` command.
 
 By default drop-down suggestion list also displays in-line
 documentation, you can turn on/off inline documnetation by pressing F4
 button.
 
-You can run any shell command by prefixing command with `!`. For e.g.
-`!ls` would list from the current directory.
+You can run any shell command by prefixing command with ``!``. For e.g.
+``!ls`` would list from the current directory.
 
 Under the hood
 --------------
 
 Other than generation of suggestions all heavy lifting is done by
-Python's `prompt
-toolkit <https://github.com/jonathanslenders/python-prompt-toolkit>`__,
+Python's `prompt toolkit <https://github.com/jonathanslenders/python-prompt-toolkit>`__,
 `Pygments <http://pygments.org>`__ libraries.
 
 A GO `program <misc/python_eats_cobra.go>`__ is used to generate
@@ -102,13 +99,9 @@ libray to fetch the resources.
 Acknowledgement
 ---------------
 
-Kube-shell is inspired by `AWS
-Shell <https://github.com/awslabs/aws-shell>`__,
+Kube-shell is inspired by `AWS Shell <https://github.com/awslabs/aws-shell>`__,
 `SAWS <https://github.com/donnemartin/saws>`__ and uses awesome Python
-`prompt
-toolkit <https://github.com/jonathanslenders/python-prompt-toolkit>`__
+`prompt toolkit <https://github.com/jonathanslenders/python-prompt-toolkit>`__
 
-.. |Build Status| image:: https://travis-ci.org/horvathtamasdev/kube-shell.svg?branch=master
-   :target: https://travis-ci.org/horvathtamasdev/kube-shell
 .. |License| image:: http://img.shields.io/:license-apache-blue.svg
    :target: http://www.apache.org/licenses/LICENSE-2.0.html
