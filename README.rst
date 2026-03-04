@@ -28,8 +28,8 @@ Command History
 
 You can use up-arrow and down-arrow to walk through the history of
 commands executed. Also up-arrow partial string matching is possible.
-For e.g. enter 'kubectl get' and use up-arrow and down-arrow to browse
-through all kubectl get commands. You could also use CTRL+r to search
+For e.g. enter `kubectl get` and use up-arrow and down-arrow to browse
+through all commands. You could also use CTRL+r to search
 from the history of commands.
 
 .. figure:: http://i.imgur.com/xsIM3QV.png
@@ -66,29 +66,22 @@ across the words.
 Installation
 ------------
 
-The kube-shell requires python and
-`pip <https://pypi.python.org/pypi/pip>`__ to install. You can
-install the kube-shell using ``pip``:
-
-.. code:: bash
-
-        $ pip install kube-shell
+Remove all older versions installed with `pip`, and run `pip install -e .` from the folder of this repo.
 
 Usage
 -----
 
-After installing kube-shell through pip, just run kube-shell to bring up
-shell.
+Just run `kube-shell` to bring up shell.
 
-At the kube-shell command prompt you can run exit or press F10 to exit
+At the `kube-shell` command prompt you can run exit or press `F10` to exit
 the shell. You can clear the screen by running clear command.
 
 By default drop-down suggestion list also displays in-line
 documentation, you can turn on/off inline documnetation by pressing F4
 button.
 
-You can run any shell command by prefixing command with "!". For e.g.
-!ls would list from the current directory.
+You can run any shell command by prefixing command with `!`. For e.g.
+`!ls` would list from the current directory.
 
 Under the hood
 --------------
@@ -105,16 +98,6 @@ generated json file to suggest commands, subcommands, options and args.
 For server side completion kube-shell uses
 `client-python <https://github.com/kubernetes-incubator/client-python>`__
 libray to fetch the resources.
-
-Status
-------
-
-Kube-shell should be useful now. But given that its aim is to increase
-productivity and easy of use, it can be improved in a number of ways. If
-you have suggestions for improvements or new features, or run into a bug
-please open an issue
-`here <https://github.com/cloudnativelabs/kube-shell/issues>`__ or chat
-in the `Gitter <https://gitter.im/kube-shell/Lobby>`__.
 
 Acknowledgement
 ---------------

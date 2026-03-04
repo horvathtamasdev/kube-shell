@@ -1,3 +1,7 @@
+# v1.0
+
+AI updated the dependencies, just for fun.
+
 # v0.0.21
 
 - suppressing urllib3 warnings and errors

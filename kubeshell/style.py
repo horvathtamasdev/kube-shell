@@ -14,7 +14,7 @@ from __future__ import print_function, absolute_import, unicode_literals
 from pygments.token import Token
 from pygments.util import ClassNotFound
 from pygments.styles import get_style_by_name
-from prompt_toolkit.styles import default_style_extensions, style_from_dict
+from prompt_toolkit.styles.pygments import style_from_pygments_cls
 
 
 class StyleFactory(object):
@@ -39,30 +39,31 @@ class StyleFactory(object):
         :return: Pygments style info.
         """
         try:
-            style = get_style_by_name(style_name)
+            pygments_style = get_style_by_name(style_name)
         except ClassNotFound:
-            style = get_style_by_name('vim')
+            pygments_style = get_style_by_name('vim')
 
-        # Create a style dictionary.
-        styles = {}
-        styles.update(style.styles)
-        styles.update(default_style_extensions)
-        t = Token
-        styles.update({
-            t.Menu.Completions.Completion.Current: 'bg:#00aaaa #000000',
-            t.Menu.Completions.Completion: 'bg:#008888 #ffffff',
-            t.Menu.Completions.Meta.Current: 'bg:#00aaaa #000000',
-            t.Menu.Completions.Meta: 'bg:#00aaaa #ffffff',
-            t.Scrollbar.Button: 'bg:#003333',
-            t.Scrollbar: 'bg:#00aaaa',
-            t.Toolbar: 'bg:#222222 #cccccc',
-            t.Toolbar.Off: 'bg:#222222 #696969',
-            t.Toolbar.On: 'bg:#222222 #ffffff',
-            t.Toolbar.Search: 'noinherit bold',
-            t.Toolbar.Search.Text: 'nobold',
-            t.Toolbar.System: 'noinherit bold',
-            t.Toolbar.Arg: 'noinherit bold',
-            t.Toolbar.Arg.Text: 'nobold'
-        })
-
-        return style_from_dict(styles)
+        # Create a style from the Pygments style
+        style = style_from_pygments_cls(pygments_style)
+        
+        # Create a custom style dictionary for additional customizations
+        from prompt_toolkit.styles import Style
+        custom_styles = """
+        .completion-menu { 
+            background-color: #008888
+            text-color: #ffffff
+        }
+        .completion-menu.completion {
+            background-color: #00aaaa
+        }
+        .completion-menu scrollbar {
+            background-color: #003333
+        }
+        .toolbar {
+            background-color: #222222
+            text-color: #cccccc
+        }
+        """
+        
+        # Merge styles - return the pygments-based style with custom extensions
+        return style

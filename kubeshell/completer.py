@@ -1,6 +1,6 @@
 from __future__ import absolute_import, unicode_literals, print_function
 from subprocess import check_output
-from prompt_toolkit.completion import Completer, Completion
+from prompt_toolkit.completion import Completer, Completion, CompleteEvent
 from fuzzyfinder import fuzzyfinder
 import logging
 import shlex
@@ -27,7 +27,7 @@ class KubectlCompleter(Completer):
                 self.kubectl_dict = json.load(json_file)
             self.parser = Parser(DATA_PATH)
         except Exception as ex:
-            logger.error("got an exception" + ex.message)
+            logger.error("got an exception: %s" % str(ex))
 
     def set_inline_help(self, val):
         self.inline_help = val
@@ -35,7 +35,7 @@ class KubectlCompleter(Completer):
     def set_namespace(self, namespace):
         self.namespace = namespace
 
-    def get_completions(self, document, complete_event, smart_completion=None):
+    def get_completions(self, document, complete_event):
         word_before_cursor = document.get_word_before_cursor(WORD=True)
         cmdline = document.text_before_cursor.strip()
         try:

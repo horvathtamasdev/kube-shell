@@ -4,8 +4,8 @@
 # Packages
 *.egg
 *.egg-info
-dist
-build
+target
+__pycache__
 eggs
 parts
 var
