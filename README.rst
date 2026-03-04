@@ -5,11 +5,26 @@ kube-shell
 
 Kube-shell: An integrated shell for working with the Kubernetes CLI
 
-Under the hood ``kube-shell`` still calls ``kubectl``. Kube-shell aims to
-provide ease-of-use of ``kubectl`` and increasing productivity.
+Installation
+------------
 
-kube-shell features
--------------------
+Remove all other versions installed with ``pip``, and run ``pip install -e .`` from the folder of this repo.
+
+Usage
+-----
+
+Just run ``kube-shell`` to bring up shell. Once running you can run ``exit`` or press ``F10`` to close the shell.
+You can clear the screen by running ``clear`` command.
+
+By default drop-down suggestion list also displays in-line
+documentation, you can turn on/off inline documnetation by pressing F4
+button.
+
+You can run any shell command by prefixing command with ``!``. For e.g.
+``!ls`` would list from the current directory.
+
+Features
+--------
 
 Auto Completion of Commands and Options with in-line documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -63,26 +78,11 @@ vi editing mode
 Press ESC you have all key bindings (w: next word, b: prev word) to move
 across the words.
 
-Installation
-------------
-
-Remove all older versions installed with ``pip``, and run ``pip install -e .`` from the folder of this repo.
-
-Usage
------
-
-Just run `kube-shell` to bring up shell. Once running you can run ``exit`` or press ``F10`` to close the shell.
-You can clear the screen by running ``clear`` command.
-
-By default drop-down suggestion list also displays in-line
-documentation, you can turn on/off inline documnetation by pressing F4
-button.
-
-You can run any shell command by prefixing command with ``!``. For e.g.
-``!ls`` would list from the current directory.
-
 Under the hood
 --------------
+
+Under the hood ``kube-shell`` still calls ``kubectl``. Kube-shell aims to
+provide ease-of-use of ``kubectl`` and increasing productivity.
 
 Other than generation of suggestions all heavy lifting is done by
 Python's `prompt toolkit <https://github.com/jonathanslenders/python-prompt-toolkit>`__,
